@@ -1,0 +1,37 @@
+#!/bin/bash
+
+git clone https://github.com/vinceliuice/Qogir-theme.git
+git clone https://github.com/vinceliuice/Tela-icon-theme.git
+git clone https://github.com/milkmadedev/oreo-cursors-compiled
+
+# Installation of oreo spark cursor 
+chown -R root:root oreo-cursors-compiled/oreo_spark_lime_cursors/ 
+mv oreo-cursors-compiled/oreo_spark_lime_cursors/ /usr/share/icons/ 
+
+
+./Qogir-theme/install.sh -c dark -d /usr/share/themes/
+./Tela-icon-theme/install.sh red -d /usr/share/icons/
+
+# Ajout icons et .desktop
+rm /usr/share/applications/lshw-gtk.desktop
+rm /usr/share/applications/gparted.desktop
+mv desktop/* /usr/share/applications
+mv icons/* /usr/share/icons 
+
+systemctl mask suspend.target hibernate.target
+
+#lightdm config 
+rm /etc/lightdm/slick-greeter.conf
+chown root:root config/slick-greeter.conf
+chmod 644 config/slick-greeter.conf
+mv config/slick-greeter.conf  /etc/lightdm/slick-greeter.conf
+
+rm /etc/lightdm/users.conf
+chown root:root config/users.conf
+chmod 644 config/users.conf
+mv config/users.conf  /etc/lightdm/users.conf
+
+rm /etc/lightdm/lightdm.conf
+chown root:root config/lightdm.conf
+chmod 644 config/lightdm.conf
+mv config/lightdm.conf  /etc/lightdm/lightdm.conf
