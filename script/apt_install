@@ -1,9 +1,6 @@
 #!/bin/bash
 
-wget -O- https://sourceforge.net/projects/boot-repair/files/key.gpg | sudo tee /etc/apt/keyrings/boot-repair.gpg; 
-
 wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null 
-
 
 sudo mv config/mozilla /etc/apt/preferences.d/mozilla 
 
@@ -21,3 +18,7 @@ apt install ${apt_pack} -y
 apt update -y
 
 apt install -f 
+
+#wget -O- https://sourceforge.net/projects/boot-repair/files/key.gpg | sudo tee /etc/apt/keyrings/boot-repair.gpg; 
+
+#sudo apt install boot-repair

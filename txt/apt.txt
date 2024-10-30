@@ -37,5 +37,3 @@ slick-greeter
 neofetch
 curl
 rpi-imager
-
-
