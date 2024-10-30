@@ -14,8 +14,8 @@ if [[ $EUID -ne 0 ]]; then
   usermod -aG adm $util
 
   ./script/apt_install
-  #./script/themes_and_grub_install
-  #./script/config_install
+  ./script/themes_and_grub_install
+  ./script/config_install
 
 fi
 
