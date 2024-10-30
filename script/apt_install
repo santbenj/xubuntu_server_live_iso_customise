@@ -2,7 +2,11 @@
 
 wget -q https://packages.mozilla.org/apt/repo-signing-key.gpg -O- | sudo tee /etc/apt/keyrings/packages.mozilla.org.asc > /dev/null 
 
+echo "deb [signed-by=/etc/apt/keyrings/packages.mozilla.org.asc] https://packages.mozilla.org/apt mozilla main" | sudo tee -a /etc/apt/sources.list.d/mozilla.list > /dev/null
+
 sudo mv config/mozilla /etc/apt/preferences.d/mozilla 
+
+wget -O- https://sourceforge.net/projects/boot-repair/files/key.gpg | sudo tee /etc/apt/keyrings/boot-repair.gpg; 
 
 echo 'deb [signed-by=/etc/apt/keyrings/boot-repair.gpg] https://ppa.launchpadcontent.net/yannubuntu/boot-repair/ubuntu noble main' | sudo tee /etc/apt/sources.list.d/boot-repair.list;
 
@@ -18,7 +22,3 @@ apt install ${apt_pack} -y
 apt update -y
 
 apt install -f 
-
-#wget -O- https://sourceforge.net/projects/boot-repair/files/key.gpg | sudo tee /etc/apt/keyrings/boot-repair.gpg; 
-
-#sudo apt install boot-repair

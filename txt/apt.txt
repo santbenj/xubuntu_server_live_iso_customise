@@ -37,3 +37,4 @@ slick-greeter
 neofetch
 curl
 rpi-imager
+boot-repair
