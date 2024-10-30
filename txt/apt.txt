@@ -4,7 +4,7 @@ thunar-archive-plugin
 p7zip
 p7zip-full
 firefox
-firefox-l10n
+firefox-l10n-fr
 gcc
 make 
 perl
