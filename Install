@@ -11,6 +11,11 @@ if [[ $EUID -ne 0 ]]; then
   rm -R ~/.config
   mv -f .config/ ~
 
+  while read line 
+  do
+  mkdir $HOME/$line
+  done< txt/repertoire.txt
+ 
   sudo ./script/install_begin
 
     echo -ne "

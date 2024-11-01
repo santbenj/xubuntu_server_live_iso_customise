@@ -8,8 +8,8 @@ git clone https://github.com/milkmadedev/oreo-cursors-compiled
 chown -R root:root oreo-cursors-compiled/oreo_spark_lime_cursors/ 
 mv oreo-cursors-compiled/oreo_spark_lime_cursors/ /usr/share/icons/ 
 
-#mkdir /usr/share/themes
-#mkdir /usr/share/icons 
+mkdir /usr/share/themes
+mkdir /usr/share/icons 
 
 ./Qogir-theme/install.sh -c dark -d /usr/share/themes/
 ./Tela-icon-theme/install.sh red -d /usr/share/icons/
