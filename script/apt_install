@@ -21,4 +21,6 @@ apt install ${apt_pack} -y
 
 apt update -y
 
+apt autoremove snapd 
+
 apt install -f 

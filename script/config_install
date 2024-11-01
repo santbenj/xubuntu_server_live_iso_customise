@@ -43,6 +43,10 @@ chown root:root config/01-network-manager-all.yaml
 chmod 600 config/01-network-manager-all.yaml
 mv config/01-network-manager-all.yaml /etc/netplan/01-network-manager-all.yaml
 
+chown root:root config/nosnap
+chmod 644 config/nosnap
+mv config/nosnap /etc/apt/preferences.d/nosnap 
+
 #Cleaning packages 
 apt autoclean
 apt clean

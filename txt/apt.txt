@@ -33,7 +33,6 @@ gufw
 eom
 dkms
 baobab
-slick-greeter
 neofetch
 curl
 rpi-imager

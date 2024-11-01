@@ -2,15 +2,13 @@
 
 # Check if Script is Run as user 
 if [[ $EUID -ne 0 ]]; then  
-
-  dconf load -f / < config/mint_eggs
   
   git clone https://github.com/pieroproietti/get-eggs
   cd get-eggs
   sudo ./get-eggs.sh
 
   cd ../..
-  sudo rm -R mint_cinnamon_toolbox_prepare_live_iso
+  sudo rm -R xubuntu_server_live_iso_customise
 
   cd $HOME 
   
