@@ -11,7 +11,7 @@ if [[ $EUID -ne 0 ]]; then
 
   apt update -y && apt upgrade -y 
 
-  usermod -aG adm $util
+  #usermod -aG adm $util
 
   ./script/apt_install
   ./script/themes_and_grub_install

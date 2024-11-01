@@ -1,11 +1,8 @@
 #!/bin/bash
 
-# modif /etc/network/interfaces 
-rm /etc/network/interfaces
+util=$(getent passwd "1000"|cut -d: -f1)
 
-chown root:root config/interfaces
-chmod 644 config/interfaces
-mv config/interfaces /etc/network/interfaces
+systemctl mask suspend.target hibernate.target
 
 #modif /etc/environment 
 rm /etc/environment 
@@ -21,6 +18,11 @@ chown root:root config/sudoers
 chmod 440 config/sudoers
 mv config/sudoers /etc/sudoers
 
+rm /etc/lightdm/users.conf
+chown root:root config/users.conf
+chmod 644 config/users.conf
+mv config/users.conf  /etc/lightdm/users.conf
+
 # Lightdm Autologin 
 rm /etc/lightdm/lightdm.conf
 mv config/lightdm.conf /etc/lightdm/lightdm.conf
@@ -33,6 +35,13 @@ echo "autologin-user=$util" >> /etc/lightdm/lightdm.conf
 chown root:root config/disable-passwords.rules
 chmod 644 config/disable-passwords.rules
 mv config/disable-passwords.rules /etc/polkit-1/rules.d/disable-passwords.rules
+
+# modif networking 
+rm /etc/netplan/50-cloud-init.yaml
+
+chown root:root config/01-network-manager-all.yaml
+chmod 600 config/01-network-manager-all.yaml
+mv config/01-network-manager-all.yaml /etc/netplan/01-network-manager-all.yaml
 
 #Cleaning packages 
 apt autoclean

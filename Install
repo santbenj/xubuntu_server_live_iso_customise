@@ -15,7 +15,7 @@ if [[ $EUID -ne 0 ]]; then
   do
   mkdir $HOME/$line
   done< txt/repertoire.txt
- 
+
   sudo ./script/install_begin
 
     echo -ne "
