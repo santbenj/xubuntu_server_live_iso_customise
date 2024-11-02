@@ -1,5 +1,6 @@
 xubuntu-core
 language-pack-fr
+language-pack-gnome-fr
 thunar-archive-plugin
 p7zip
 p7zip-full
@@ -36,4 +37,3 @@ baobab
 neofetch
 curl
 rpi-imager
-boot-repair
