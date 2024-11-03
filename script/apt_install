@@ -24,5 +24,3 @@ apt update -y
 apt autoremove snapd -y
 
 apt install -f 
-
-apt install boot-repair -y

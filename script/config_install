@@ -47,6 +47,13 @@ chown root:root config/nosnap
 chmod 644 config/nosnap
 mv config/nosnap /etc/apt/preferences.d/nosnap 
 
+#disable networkd cause we're usin NetworkManager
+systemctl stop systemd-netword.socket 
+systemctl disable systemd-netword.socket 
+
+systemctl stop systemd-netword.service
+systemctl disable systemd-netword.service
+
 #Cleaning packages 
 apt autoclean
 apt clean
